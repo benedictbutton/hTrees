@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .App-logo {
@@ -26,6 +28,18 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.css-1r7eqq-cellContainerOverflow:hover {
+  z-index: 1000;
+}
+
+.css-155mn3q div {
+  color: white;
+}
+
+.css-1w5pd0q {
+  padding: 0 15px;
 }
 
 @keyframes App-logo-spin {
