@@ -49,8 +49,8 @@ function App() {
             </NavLink>
           </div>
         </div>
-        <Outlet />
       </header>
+      <Outlet />
     </div>
   );
 }

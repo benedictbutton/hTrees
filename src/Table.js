@@ -46,7 +46,7 @@ const Table = ({ columns, data: productData }) => {
   console.log("rows: ", rows);
 
   return (
-    <table {...getTableProps()}>
+    <table {...getTableProps()} style={{ margin: "0 auto" }}>
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
