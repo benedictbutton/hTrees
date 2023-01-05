@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,19 +13,42 @@ import Grafana from "./Grafana";
 import ReactTable from "./ReactTable";
 
 function App() {
+  const [selected, setSelected] = useState("");
   return (
     <div className="App">
       <header className="App-header">
-        <NavLink to="/grafana">
-          <Card>
-            <Card.Heading>Grafana Table</Card.Heading>
-          </Card>
-        </NavLink>
-        <NavLink to="/react-table">
-          <Card>
-            <Card.Heading>React-Table</Card.Heading>
-          </Card>
-        </NavLink>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-around",
+          }}
+        >
+          <div className="nav-cards">
+            <NavLink to="/grafana">
+              <Card
+                isSelected={selected === "grafana"}
+                onClick={() => setSelected("grafana")}
+              >
+                <Card.Heading>
+                  <h3>Grafana</h3>
+                </Card.Heading>
+              </Card>
+            </NavLink>
+          </div>
+          <div className="nav-cards">
+            <NavLink to="/react-table" className="nav-cards">
+              <Card
+                isSelected={selected === "react-table"}
+                onClick={() => setSelected("react-table")}
+              >
+                <Card.Heading>
+                  <h3>React-Table</h3>
+                </Card.Heading>
+              </Card>
+            </NavLink>
+          </div>
+        </div>
         <Outlet />
       </header>
     </div>
