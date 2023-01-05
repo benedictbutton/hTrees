@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/hTrees/static/css/main.bd4390a6.css",
+    "main.js": "/hTrees/static/js/main.11319744.js",
+    "react-monaco-editor.js": "/hTrees/static/js/react-monaco-editor.b882b074.chunk.js",
+    "static/js/787.b0987631.chunk.js": "/hTrees/static/js/787.b0987631.chunk.js",
+    "index.html": "/hTrees/index.html",
+    "main.bd4390a6.css.map": "/hTrees/static/css/main.bd4390a6.css.map",
+    "main.11319744.js.map": "/hTrees/static/js/main.11319744.js.map",
+    "react-monaco-editor.b882b074.chunk.js.map": "/hTrees/static/js/react-monaco-editor.b882b074.chunk.js.map",
+    "787.b0987631.chunk.js.map": "/hTrees/static/js/787.b0987631.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd4390a6.css",
+    "static/js/main.11319744.js"
+  ]
+}
