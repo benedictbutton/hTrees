@@ -10,7 +10,7 @@ import { applyFieldOverrides } from "@grafana/data";
 import { merge } from "lodash";
 import { ThresholdsConfig, ThresholdsMode } from "@grafana/data";
 
-function prepData(data: DataFrame[], theme: GrafanaTheme2) {
+function prepData(data, theme) {
   return applyFieldOverrides({
     data: data,
     fieldConfig: {
@@ -18,11 +18,11 @@ function prepData(data: DataFrame[], theme: GrafanaTheme2) {
       defaults: {},
     },
     theme,
-    replaceVariables: (value: string) => value,
+    replaceVariables: (value) => value,
   });
 }
 
-const defaultThresholds: ThresholdsConfig = {
+const defaultThresholds = {
   steps: [
     {
       color: "yellow",
