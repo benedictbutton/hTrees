@@ -13,7 +13,7 @@ import Grafana from "./Grafana";
 import ReactTable from "./ReactTable";
 
 function App() {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("grafana");
   return (
     <div className="App">
       <header className="App-header">
