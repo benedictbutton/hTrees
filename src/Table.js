@@ -1,18 +1,7 @@
 import React from "react";
-import {
-  totalColumnsWidth,
-  getTableProps, // table props from react-table
-  getTableBodyProps, // table body props from react-table
-  headerGroups, // headerGroups, if your table has groupings
-  rows, // rows for the table based on the data passed
-  prepareRow,
-  useTable,
-  useBlockLayout,
-} from "react-table";
-import { useStyles2, useTheme2 } from "@grafana/ui";
+import { useTable, useBlockLayout, useFilters } from "react-table";
+import { useStyles2 } from "@grafana/ui";
 import { getTableStyles } from "@grafana/ui/dist/esm/components/Table/styles";
-
-// import { getTableStyles } from "@grafana/ui";
 
 const Table = ({ columns, data: productData }) => {
   const defaultColumn = React.useMemo(
@@ -26,8 +15,6 @@ const Table = ({ columns, data: productData }) => {
 
   const tableStyles = useStyles2(getTableStyles);
 
-  console.log(tableStyles);
-
   const {
     getTableProps, // table props from react-table
     getTableBodyProps, // table body props from react-table
@@ -40,10 +27,9 @@ const Table = ({ columns, data: productData }) => {
       columns,
       defaultColumn,
     },
+    useFilters,
     useBlockLayout
   );
-
-  console.log("rows: ", rows);
 
   return (
     <table {...getTableProps()} style={{ margin: "0 auto" }}>
@@ -78,4 +64,3 @@ const Table = ({ columns, data: productData }) => {
 };
 
 export default Table;
-// className={tableStyles.row}

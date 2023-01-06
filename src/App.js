@@ -25,7 +25,7 @@ function App() {
           }}
         >
           <div className="nav-cards">
-            <NavLink to="/grafana">
+            <NavLink to="/grafana" style={{ textDecoration: "none" }}>
               <Card
                 isSelected={selected === "grafana"}
                 onClick={() => setSelected("grafana")}
@@ -33,11 +33,16 @@ function App() {
                 <Card.Heading>
                   <h3>Grafana</h3>
                 </Card.Heading>
+                <Card.Description>
+                  New to Grafana and struggled finding adequate developer
+                  documentation. The storybook UI seems like very much a work in
+                  progress.
+                </Card.Description>
               </Card>
             </NavLink>
           </div>
           <div className="nav-cards">
-            <NavLink to="/react-table" className="nav-cards">
+            <NavLink to="/react-table" style={{ textDecoration: "none" }}>
               <Card
                 isSelected={selected === "react-table"}
                 onClick={() => setSelected("react-table")}
@@ -45,6 +50,11 @@ function App() {
                 <Card.Heading>
                   <h3>React-Table</h3>
                 </Card.Heading>
+                <Card.Description>
+                  Despite Grafana abstracting react-table in its UI table, I
+                  found using react-table directly easier as it gave me more
+                  options and finer control.
+                </Card.Description>
               </Card>
             </NavLink>
           </div>

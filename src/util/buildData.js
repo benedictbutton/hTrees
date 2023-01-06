@@ -8,7 +8,7 @@ import {
 import { TableCellDisplayMode } from "@grafana/schema";
 import { applyFieldOverrides } from "@grafana/data";
 import { merge } from "lodash";
-import { ThresholdsConfig, ThresholdsMode } from "@grafana/data";
+import { ThresholdsMode } from "@grafana/data";
 
 function prepData(data, theme) {
   return applyFieldOverrides({
@@ -36,11 +36,7 @@ const defaultThresholds = {
   mode: ThresholdsMode.Absolute,
 };
 
-const buildData = (
-  tableData: DataFrame[],
-  theme: GrafanaTheme2,
-  config: Record<string, FieldConfig>
-): DataFrame => {
+const buildData = (tableData, theme, config) => {
   const data = new MutableDataFrame({
     fields: [
       {

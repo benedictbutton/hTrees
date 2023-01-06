@@ -1,67 +1,88 @@
-import { createColumnHelper } from "react-table";
+import Rating from "../Rating";
 
-const columnHelper = createColumnHelper();
-
-// Make some columns!
-export const columns = [
-  columnHelper.accessor((row) => row.id, {
-    id: "id",
-    cell: (info) => info.getValue(),
-    header: () => <span>ID</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => row.title, {
-    id: "title",
-    cell: (info) => info.getValue(),
-    header: () => <span>Title</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => row.description, {
-    id: "description",
-    cell: (info) => info.getValue(),
-    header: () => <span>Description</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => `${"$" + parseFloat(row.price).toFixed(2)}`, {
-    id: "price",
-    cell: (info) => info.getValue(),
-    header: () => <span>Price</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => row.discountPercentage + "%", {
-    id: "discount",
-    cell: (info) => info.getValue(),
-    header: () => <span>Discount</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => row.rating, {
-    id: "rating",
-    cell: (info) => info.getValue(),
-    header: () => <span>Rating</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => row.stock, {
-    id: "stock",
-    cell: (info) => info.getValue(),
-    header: () => <span>Stock</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => row.brand, {
-    id: "brand",
-    cell: (info) => info.getValue(),
-    header: () => <span>Brand</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => row.category, {
-    id: "category",
-    cell: (info) => info.getValue(),
-    header: () => <span>Category</span>,
-    // footer: props => props.column.id,
-  }),
-  columnHelper.accessor((row) => row.thumbnail, {
-    id: "thumbnail",
-    cell: (info) => info.getValue(),
-    header: () => <span>Thumbnail</span>,
-    // footer: props => props.column.id,
-  }),
-];
+export const buildColumns = () => {
+  return [
+    {
+      accessor: "id",
+      id: "id",
+      cell: (info) => info.getValue(),
+      Header: "ID",
+      width: 80,
+    },
+    {
+      accessor: (row) => row.title,
+      id: "title",
+      cell: (info) => info.getValue(),
+      Header: "Title",
+    },
+    {
+      accessor: (row) => row.description,
+      id: "description",
+      cell: (info) => info.getValue(),
+      Header: "Description",
+      width: 250,
+    },
+    {
+      accessor: (row) => `${"$" + parseFloat(row.price).toFixed(2)}`,
+      id: "price",
+      cell: (info) => info.getValue(),
+      Header: "Price",
+    },
+    {
+      accessor: (row) => row.discountPercentage + "%",
+      id: "discount",
+      cell: (info) => info.getValue(),
+      Header: "Discount",
+    },
+    {
+      accessor: (row) => row.rating,
+      id: "Rating",
+      Cell: (row) => <Rating row={row} />,
+      Header: "Rating",
+      minWidth: "200px",
+    },
+    {
+      accessor: (row) => row.stock,
+      id: "Stock",
+      cell: (info) => info.getValue(),
+      Header: "Stock",
+      width: 90,
+    },
+    {
+      accessor: (row) => row.brand,
+      id: "Brand",
+      cell: (info) => info.getValue(),
+      Header: "Brand",
+      width: 125,
+    },
+    {
+      accessor: (row) => row.category,
+      id: "Category",
+      cell: (info) => info.getValue(),
+      Header: "Category",
+    },
+    {
+      accessor: (row) => row.thumbnail,
+      id: "Thumbnail",
+      Cell: (row) => (
+        <img
+          src={row.row.original.thumbnail}
+          alt={row.row}
+          width="50px"
+          height="50px"
+        />
+      ),
+      Header: "Thumbnail",
+    },
+    {
+      accessor: (row) => row.images,
+      id: "Images",
+      Cell: (row) =>
+        row.row.original.images.map((image) => (
+          <img src={image} alt="" width="35px" height="35px" />
+        )),
+      Header: "Images",
+      width: 250,
+    },
+  ];
+};
