@@ -27,7 +27,7 @@ function App() {
                 <h3>Grafana</h3>
               </Card.Heading>
               <Card.Description>
-                New to Grafana and new to its ecosystem.<br></br>
+                New to Grafana and its ecosystem.<br></br>
                 <br></br>
               </Card.Description>
             </Card>
