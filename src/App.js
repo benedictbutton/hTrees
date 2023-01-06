@@ -1,16 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Outlet,
-  NavLink,
-} from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import { Card } from "@grafana/ui";
-import Grafana from "./Grafana";
-import ReactTable from "./ReactTable";
 
 function App() {
   const [selected, setSelected] = useState("grafana");
