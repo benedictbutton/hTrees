@@ -15,6 +15,7 @@ function App() {
             display: "flex",
             width: "100%",
             justifyContent: "space-around",
+            alignItems: "center",
           }}
         >
           <div className="nav-cards">
@@ -26,9 +27,8 @@ function App() {
                 <h3>Grafana</h3>
               </Card.Heading>
               <Card.Description>
-                New to Grafana and struggled finding adequate developer
-                documentation. The storybook UI seems like very much a work in
-                progress.
+                New to Grafana and new to its ecosystem.<br></br>
+                <br></br>
               </Card.Description>
             </Card>
           </div>
@@ -41,9 +41,8 @@ function App() {
                 <h3>React-Table</h3>
               </Card.Heading>
               <Card.Description>
-                Despite Grafana abstracting react-table in its UI table, I found
-                using react-table directly easier as it gave me more options and
-                finer control.
+                Despite Grafana abstracting react-table in its UI library, using
+                react-table directly made certain things easier for me
               </Card.Description>
             </Card>
           </div>

@@ -35,6 +35,10 @@
   z-index: 1000;
 }
 
+.css-1lkz19s {
+  text-align: left;
+}
+
 .css-155mn3q div {
   color: white;
 }
@@ -49,6 +53,7 @@
 
 .nav-cards {
   width: 45%;
+  padding: 20px;
 }
 
 @keyframes App-logo-spin {
